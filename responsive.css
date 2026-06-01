@@ -1,0 +1,147 @@
+/* ============================================================
+   Responsive layer — tablet, phone, small phone.
+   Loaded last so it overrides base rules cleanly.
+   Breakpoints: 1024 (tablet) · 760 (large phone) · 520 (phone) · 380 (small)
+   ============================================================ */
+
+/* ---- fluid container & section rhythm ---- */
+@media (max-width:1024px){
+  .wrap{ padding:0 28px; }
+  .section{ padding:68px 0; }
+  .sec-head{ margin-bottom:36px; }
+}
+
+@media (max-width:760px){
+  .wrap{ padding:0 20px; }
+  .section{ padding:52px 0; }
+
+  /* section heads stack, link button drops below */
+  .sec-head{ flex-direction:column; align-items:flex-start; gap:16px; margin-bottom:28px; }
+  .sec-head .l{ max-width:none; }
+  .sec-head h2{ font-size:clamp(26px,7vw,34px); }
+  .sec-head p{ font-size:15.5px; }
+
+  /* hero */
+  .hero .wrap{ padding:36px 20px 44px; gap:32px; }
+  .hero h1{ font-size:clamp(33px,9vw,46px); }
+  .hero-sub{ font-size:16.5px; margin-top:20px; }
+  .hero-cta{ margin-top:26px; }
+  .hero-cta .btn{ flex:1 1 auto; }
+
+  /* trust — 2x2, smaller numbers */
+  .trust .t{ padding:28px 18px; }
+  .trust .t .n{ font-size:38px; }
+  .trust .t .c{ font-size:13px; margin-top:7px; }
+
+  /* directions */
+  .dir{ padding:24px 22px 22px; }
+  .dir .ico{ margin-bottom:32px; }
+
+  /* price */
+  .prow{ flex-wrap:wrap; padding:16px 18px; gap:6px 14px; }
+  .prow .info{ flex:1 1 100%; }
+  .prow .price{ font-size:20px; }
+  .prow .addbtn{ margin-left:auto; }
+  .price-side .panel{ padding:28px 24px; }
+
+  /* cta band */
+  .ctaband{ padding:38px 24px; }
+  .ctaband .row .btn{ flex:1 1 auto; }
+
+  /* footer */
+  .foot-bottom{ flex-direction:column; align-items:flex-start; gap:16px; }
+  .foot-bottom .lks{ gap:14px 18px; }
+}
+
+/* ---- phones ---- */
+@media (max-width:520px){
+  .wrap{ padding:0 max(16px, env(safe-area-inset-left)) 0 max(16px, env(safe-area-inset-left)); }
+  .section{ padding:44px 0; }
+
+  /* hero buttons full width, stack */
+  .hero-cta{ flex-direction:column; }
+  .hero-cta .btn{ width:100%; }
+  .hero-chips{ gap:8px; }
+  .hero-chips .chip{ height:36px; font-size:13px; }
+
+  /* quick-book card tighter */
+  .qbook{ padding:20px 18px; }
+  .qbook-top .t{ font-size:15px; }
+  .qsearch{ height:48px; }
+  .qsearch input{ font-size:14.5px; }
+  .qbook-foot{ flex-direction:column; align-items:stretch; gap:14px; }
+  .qbook-foot .total{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+  .qbook-foot .total b{ display:inline; font-size:20px; }
+  .qbook-foot .btn{ width:100%; }
+
+  /* trust single column */
+  .trust .wrap{ grid-template-columns:1fr 1fr; }
+  .trust .t{ padding:22px 14px; border-left:1px solid var(--hairline); }
+  .trust .t:nth-child(odd){ border-left:none; }
+  .trust .t .n{ font-size:34px; }
+
+  /* assurance single column */
+  .assure{ grid-template-columns:1fr; gap:26px 0; }
+
+  /* price side cta full */
+  .price-side .panel h3{ font-size:26px; }
+
+  /* CTA band */
+  .ctaband h2{ font-size:clamp(24px,7.5vw,32px); }
+  .ctaband p{ font-size:15.5px; }
+  .ctaband .row{ flex-direction:column; }
+  .ctaband .row .btn{ width:100%; }
+
+  /* footer single column */
+  .foot-grid{ grid-template-columns:1fr; gap:30px; }
+  .foot-brand img{ height:96px; }
+
+  /* booking sheet: bottom-sheet feel on phone */
+  .bk-overlay{ align-items:flex-end; }
+  .bk-panel{ width:100%; height:94dvh; border-radius:20px 20px 0 0; animation:sheetUp .32s cubic-bezier(.22,.61,.36,1) both; }
+  .bk-head{ padding:18px 20px; }
+  .bk-head .ttl .t{ font-size:20px; }
+  .bk-steps{ padding:14px 20px; }
+  .bk-body{ padding:22px 20px; }
+  .bk-foot{ padding:14px 20px; gap:10px; flex-wrap:wrap; }
+  .bk-foot .sum .v{ font-size:21px; }
+  .bk-foot .btn--gold{ flex:1 1 auto; }
+
+  /* slots / days a touch tighter */
+  .slot-grid{ grid-template-columns:repeat(4,1fr); gap:7px; }
+  .day-grid{ grid-template-columns:repeat(5,1fr); gap:6px; }
+  .day{ padding:10px 2px; }
+  .day .dn{ font-size:19px; }
+
+  /* mega menu never shows on phone (nav collapses), but guard anyway */
+  .mega .wrap{ grid-template-columns:1fr; gap:24px; padding:24px 16px; }
+}
+
+@keyframes sheetUp{ from{ transform:translateY(40px); opacity:.6;} to{ transform:none; opacity:1;} }
+
+/* ---- small phones ---- */
+@media (max-width:380px){
+  .wrap{ padding:0 14px; }
+  .brand .bt b{ font-size:17px; }
+  .brand .bt span{ font-size:9px; letter-spacing:.1em; }
+  .brand img{ height:40px; }
+  .trust .wrap{ grid-template-columns:1fr; }
+  .trust .t{ border-left:none; padding:18px 0; border-top:1px solid var(--hairline); }
+  .trust .t:first-child{ border-top:none; }
+  .field-row{ grid-template-columns:1fr; }
+  .bk-foot .sum{ flex-basis:100%; order:-1; display:flex; align-items:baseline; justify-content:space-between; }
+  .review-total .v{ font-size:24px; }
+  .day .dow{ font-size:10px; }
+}
+
+/* ---- coarse-pointer (touch) niceties: kill hover lifts that stick ---- */
+@media (hover:none){
+  .dir:hover{ transform:none; }
+  .dir:active{ box-shadow:var(--shadow-2); }
+}
+
+/* ---- landscape phone: let the booking sheet use full height ---- */
+@media (max-width:760px) and (orientation:landscape){
+  .bk-panel{ height:100dvh; border-radius:0; }
+  .bk-overlay{ align-items:stretch; }
+}
