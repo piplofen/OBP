@@ -15,6 +15,9 @@
   .wrap{ padding:0 20px; }
   .section{ padding:52px 0; }
 
+  /* decorative top strip — address lives in footer, ЛК in the menu */
+  .topbar{ display:none; }
+
   /* section heads stack, link button drops below */
   .sec-head{ flex-direction:column; align-items:flex-start; gap:16px; margin-bottom:28px; }
   .sec-head .l{ max-width:none; }
@@ -60,6 +63,16 @@
 
   /* hero buttons full width, stack */
   .hero-cta{ flex-direction:column; }
+
+  /* compact nav: brand + primary CTA + burger must fit */
+  .nav .wrap{ height:68px; gap:10px; }
+  .nav-actions{ gap:8px; }
+  .brand{ gap:10px; min-width:0; }
+  .brand img{ height:38px; }
+  .brand .bt b{ font-size:16px; }
+  .brand .bt span{ font-size:8.5px; letter-spacing:.09em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .nav-actions .btn--gold{ height:40px; padding:0 16px; font-size:14px; }
+  .menubtn{ width:42px; height:42px; }
   .hero-cta .btn{ width:100%; }
   .hero-chips{ gap:8px; }
   .hero-chips .chip{ height:36px; font-size:13px; }
@@ -122,8 +135,8 @@
 /* ---- small phones ---- */
 @media (max-width:380px){
   .wrap{ padding:0 14px; }
+  .brand .bt span{ display:none; }
   .brand .bt b{ font-size:17px; }
-  .brand .bt span{ font-size:9px; letter-spacing:.1em; }
   .brand img{ height:40px; }
   .trust .wrap{ grid-template-columns:1fr; }
   .trust .t{ border-left:none; padding:18px 0; border-top:1px solid var(--hairline); }
