@@ -1,0 +1,159 @@
+/* ============================================================
+   ОБП — Объединённая больница с поликлиникой
+   Quiet-luxury system. Gold corporate voltage on warm white.
+   Palette extracted from the hospital emblem gradient.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+:root{
+  /* ---- gold (from logo) ---- */
+  --gold-hi:    #cbba8e;
+  --gold:       #ab9670;
+  --gold-core:  #9a8560;
+  --gold-deep:  #7c6a4a;
+  --gold-ink:   #5f5038;          /* gold dark enough for text on white */
+  --gold-grad:  linear-gradient(135deg,#d2c194 0%,#b09a6e 42%,#8a7550 100%);
+  --gold-grad-soft: linear-gradient(135deg,#f3ecdc 0%,#e8ddc4 100%);
+
+  /* ---- ink & neutrals (warm) ---- */
+  --ink:        #211e18;
+  --ink-soft:   #4b4538;
+  --muted:      #8d8676;
+  --muted-soft: #a9a394;
+
+  /* ---- surfaces (warm porcelain) ---- */
+  --canvas:     #ffffff;
+  --surface:    #faf7f1;
+  --surface-2:  #f4efe4;
+  --surface-3:  #ece4d4;
+  --on-gold:    #2a2418;          /* ink text that sits on gold fills */
+
+  /* ---- lines ---- */
+  --hairline:        #ece6d9;
+  --hairline-strong: #ddd4c2;
+  --hairline-ink:    #2e2a22;
+
+  /* ---- radius ---- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-full: 999px;
+
+  /* ---- elevation (one warm tier) ---- */
+  --shadow-1: 0 1px 0 rgba(124,106,74,.04), 0 2px 8px rgba(80,66,40,.05), 0 8px 24px rgba(80,66,40,.05);
+  --shadow-2: 0 2px 0 rgba(124,106,74,.05), 0 8px 28px rgba(70,58,34,.10), 0 20px 56px rgba(70,58,34,.10);
+  --shadow-pop: 0 24px 80px rgba(46,38,20,.20), 0 4px 18px rgba(46,38,20,.12);
+
+  /* ---- type ---- */
+  --font-display: "Cormorant Garamond","Playfair Display",Georgia,serif;
+  --font-sans: "Manrope", -apple-system, system-ui, sans-serif;
+
+  --maxw: 1240px;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  color:var(--ink);
+  background:var(--canvas);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{ background:#e6d8b6; color:#2a2418; }
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; }
+
+:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:4px; }
+
+.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+
+/* ---------------- Typography ---------------- */
+.eyebrow{
+  font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gold-ink);
+}
+.display{
+  font-family:var(--font-display);
+  font-weight:500; line-height:1.02; letter-spacing:-.01em;
+  color:var(--ink); margin:0;
+}
+.serif{ font-family:var(--font-display); }
+.num{ font-variant-numeric:tabular-nums; }
+
+h1,h2,h3{ margin:0; }
+
+/* ---------------- Buttons ---------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:var(--font-sans); font-weight:600; font-size:15px; line-height:1;
+  padding:0 22px; height:50px; border-radius:var(--r-xs);
+  border:1px solid transparent; cursor:pointer; white-space:nowrap;
+  transition:transform .14s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+.btn:active{ transform:translateY(1px); }
+.btn--gold{
+  background:var(--gold-grad); color:var(--on-gold);
+  box-shadow:0 1px 0 rgba(255,255,255,.35) inset, 0 6px 18px rgba(138,117,80,.28);
+}
+.btn--gold:hover{ box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 10px 26px rgba(138,117,80,.36); filter:saturate(1.05) brightness(1.02); }
+.btn--ink{ background:var(--ink); color:#f5efe2; }
+.btn--ink:hover{ background:#322c22; }
+.btn--ghost{
+  background:transparent; color:var(--gold-ink); border-color:var(--hairline-strong);
+}
+.btn--ghost:hover{ border-color:var(--gold-deep); background:var(--surface); }
+.btn--sm{ height:42px; padding:0 16px; font-size:14px; }
+.btn--lg{ height:56px; padding:0 28px; font-size:16px; }
+.btn--block{ width:100%; }
+.btn[disabled]{ opacity:.45; cursor:not-allowed; transform:none; }
+
+/* link button */
+.linkbtn{
+  background:none; border:none; padding:0; cursor:pointer; color:var(--gold-ink);
+  font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:6px;
+}
+.linkbtn span{ transition:transform .18s ease; }
+.linkbtn:hover span{ transform:translateX(3px); }
+
+/* ---------------- Pills / chips ---------------- */
+.chip{
+  display:inline-flex; align-items:center; gap:8px; height:38px; padding:0 16px;
+  border-radius:var(--r-full); border:1px solid var(--hairline-strong);
+  background:var(--canvas); color:var(--ink-soft); font-size:14px; font-weight:500;
+  cursor:pointer; transition:border-color .18s ease, background .18s ease, color .18s ease;
+}
+.chip:hover{ border-color:var(--gold-deep); color:var(--ink); }
+.chip svg{ color:var(--gold-deep); }
+
+/* gold thin rule */
+.rule-gold{ height:1px; background:var(--hairline-strong); border:0; }
+.kicker-line{ width:42px; height:2px; background:var(--gold-grad); border-radius:2px; }
+
+/* utility */
+.muted{ color:var(--muted); }
+.goldtext{ color:var(--gold-ink); }
+.center{ text-align:center; }
+.stack-tight > * + *{ margin-top:6px; }
+
+/* card */
+.card{
+  background:var(--canvas); border:1px solid var(--hairline);
+  border-radius:var(--r-md); box-shadow:var(--shadow-1);
+}
+
+/* fade/slide entrance */
+@keyframes riseIn{ from{ opacity:0; transform:translateY(14px);} to{ opacity:1; transform:none;} }
+.rise{ animation:riseIn .6s cubic-bezier(.22,.61,.36,1) both; }
+@media (prefers-reduced-motion: reduce){ .rise{ animation:none; opacity:1; transform:none; } }
+
+/* scrollbar (subtle) */
+.scroll-thin{ scrollbar-width:thin; scrollbar-color:var(--hairline-strong) transparent; }
+.scroll-thin::-webkit-scrollbar{ width:8px; height:8px; }
+.scroll-thin::-webkit-scrollbar-thumb{ background:var(--hairline-strong); border-radius:8px; }
