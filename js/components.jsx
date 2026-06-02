@@ -29,7 +29,7 @@ function Nav({ onBook, onMenu }){
             <b>+7 (495) 982-10-90</b>
             <span>Ежедневно, круглосуточно</span>
           </div>
-          <a className="btn btn--ghost btn--sm" href="https://lk.kremlinmed.ru" target="_blank" rel="noreferrer">Личный кабинет</a>
+          <a className="btn btn--ghost btn--sm" href="Личный кабинет.html">Личный кабинет</a>
           <button className="btn btn--gold btn--sm" onClick={()=>onBook(null,'analyses')}>Записаться</button>
           <button className="menubtn" onClick={onMenu} aria-label="Меню"><Icon name="menu" size={22}/></button>
         </div>
@@ -133,7 +133,7 @@ function Hero({ onBook }){
             </button>
           </div>
           <div className="hero-chips">
-            <a className="chip" href="https://lk.kremlinmed.ru" target="_blank" rel="noreferrer"><Icon name="doc" size={16}/> Результаты анализов</a>
+            <a className="chip" href="Личный кабинет.html"><Icon name="doc" size={16}/> Результаты анализов</a>
             <button className="chip" onClick={()=>onBook(null,'analyses')}><Icon name="home" size={16}/> Вызов на дом</button>
             <a className="chip" href="#price"><Icon name="card" size={16}/> Прейскурант</a>
           </div>
@@ -304,7 +304,7 @@ function Footer(){
             <h5>Пациентам</h5>
             <ul>
               <li><a href="#price">Прейскурант</a></li>
-              <li><a href="https://lk.kremlinmed.ru" target="_blank" rel="noreferrer">Личный кабинет</a></li>
+              <li><a href="Личный кабинет.html">Личный кабинет</a></li>
               <li><a href="#">Результаты анализов</a></li>
               <li><a href="#">Подготовка к исследованиям</a></li>
               <li><a href="#">Платные услуги</a></li>
@@ -358,7 +358,7 @@ function MobileDrawer({ open, onClose, onBook }){
           <a key={k} className="mlink" href={k==='Прейскурант'?'#price':k==='Контакты'?'#contacts':'#directions'} onClick={onClose}>{k}</a>
         ))}
         <button className="btn btn--gold btn--block" style={{marginTop:20}} onClick={()=>{ onClose(); onBook(null,'analyses'); }}>Записаться на анализы</button>
-        <a className="btn btn--ghost btn--block" style={{marginTop:10}} href="https://lk.kremlinmed.ru" target="_blank" rel="noreferrer">Личный кабинет</a>
+        <a className="btn btn--ghost btn--block" style={{marginTop:10}} href="Личный кабинет.html">Личный кабинет</a>
         <div style={{marginTop:22,textAlign:'center'}}>
           <a href="tel:+74959821090" style={{fontWeight:700,fontSize:18}}>+7 (495) 982-10-90</a>
         </div>
