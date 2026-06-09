@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>ОБП — Объединённая больница с поликлиникой УДП РФ</title>
-<meta name="description" content="Объединённая больница с поликлиникой Управления делами Президента РФ. Полный цикл медицинской помощи, персональное ведение и конфиденциальность."/>
+<title>Врач — ОБП</title>
+<meta name="description" content="Карточка специалиста клиники: квалификация, направления работы, запись на приём."/>
 <link rel="icon" href="assets/obp-emblem.png"/>
 <link rel="stylesheet" href="site/site.css"/>
 </head>
@@ -15,6 +15,9 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script type="text/babel" src="site/data.jsx"></script>
 <script type="text/babel" src="site/shell.jsx"></script>
-<script type="text/babel" src="site/page-home.jsx"></script>
+<script type="text/babel" src="site/pages2.jsx"></script>
+<script type="text/babel">
+ReactDOM.createRoot(document.getElementById('root')).render(<VrachPage/>);
+</script>
 </body>
 </html>

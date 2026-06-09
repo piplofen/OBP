@@ -2,71 +2,16 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Объединённая больница с поликлиникой — УДП РФ</title>
-<meta name="description" content="ФГБУ «Объединённая больница с поликлиникой» Управления делами Президента РФ. Запись на анализы и приём врача онлайн, прейскурант, результаты в личном кабинете."/>
+<meta http-equiv="refresh" content="0; url=index.html"/>
+<title>ОБП — переход на сайт</title>
 <link rel="icon" href="assets/obp-emblem.png"/>
-<link rel="stylesheet" href="styles.css"/>
-<link rel="stylesheet" href="sections.css"/>
-<link rel="stylesheet" href="responsive.css"/>
+<style>
+  body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;font-family:-apple-system,system-ui,sans-serif;background:#faf7f1;color:#5f5038;}
+  a{color:#7c6a4a;font-weight:600;}
+</style>
 </head>
 <body>
-<div id="root"></div>
-
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-
-<script type="text/babel" src="js/icons.jsx"></script>
-<script type="text/babel" src="js/booking.jsx"></script>
-<script type="text/babel" src="js/components.jsx"></script>
-
-<script type="text/babel">
-const { useState, useCallback } = React;
-
-function App(){
-  const [book, setBook] = useState({ open:false, seed:null, mode:'analyses' });
-  const [drawer, setDrawer] = useState(false);
-
-  const onBook = useCallback((seed, mode)=>{
-    setBook({ open:true, seed: seed&&seed.length?seed:null, mode: mode||'analyses' });
-  },[]);
-  const closeBook = useCallback(()=>setBook(b=>({...b, open:false})),[]);
-
-  return (
-    <React.Fragment>
-      <div className="topbar">
-        <div className="wrap">
-          <div className="tb-left">
-            <span className="hide-sm">ФГБУ «ОБП» Управления делами Президента РФ</span>
-            <span className="dotsep hide-sm"></span>
-            <a href="#contacts"><Icon name="mappin" size={14}/> Мичуринский пр-т, 6</a>
-          </div>
-          <div className="tb-right">
-            <a href="#"><Icon name="doc" size={14}/> Документы</a>
-            <a href="Личный кабинет.html"><Icon name="user" size={14}/> Личный кабинет</a>
-          </div>
-        </div>
-      </div>
-
-      <Nav onBook={onBook} onMenu={()=>setDrawer(true)}/>
-      <main>
-        <Hero onBook={onBook}/>
-        <Trust/>
-        <Directions onBook={onBook}/>
-        <Assurance/>
-        <PriceTeaser onBook={onBook}/>
-        <CtaBand onBook={onBook}/>
-      </main>
-      <Footer/>
-
-      <BookingFlow open={book.open} onClose={closeBook} seed={book.seed} seedMode={book.mode}/>
-      <MobileDrawer open={drawer} onClose={()=>setDrawer(false)} onBook={onBook}/>
-    </React.Fragment>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
-</script>
+<p>Переходим на обновлённый сайт… Если переход не произошёл, <a href="index.html">откройте главную</a>.</p>
+<script>location.replace('index.html');</script>
 </body>
 </html>
